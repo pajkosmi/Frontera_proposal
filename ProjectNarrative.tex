@@ -90,49 +90,15 @@
 \setcounter{page}{1} \pagenumbering{arabic} \renewcommand{\thepage}
            {\arabic{page} }%\pagestyle{plain}
 
-% \begin{center}
-% {\bf CCSNe} \vspace{-0.15in}
-% %\section*{Project Narrative}
-% \end{center}
-
-%\begin{center}
-%    Michael A. Pajkos\\
-%\end{center}
-
-%\section{Abstract}
-
 \textbf{Supernova (matter simulations) Introduction: }
 
 Core-collapse supernovae (CCSNe) are the explosive endings of massive stars that set the initial conditions for compact object formation.  Capturing these initial conditions, alongside predicting observables to constrain them, is the primary goal of the CCSN program.  The first objective of the CCSN program is to exercise current code capabilities \citep{legred:2023} to model newly born neutron stars within CCSNe that accrete matter and collapse to a protocompact star (PCS).  We will go beyond previous work \citep{zha:2020}, by being the first to use Characteristic-Cauchy Extraction (CCE) \citep{moxon:2021} to search for a new, detectable, low frequency `memory' component of the GW signal from rotating PCSs.  This project will involve two PCS collapses at two different resolutions, for a total of four simulations.
 
-The second objective of the CCSN program is to explore early time CCSN behavior.  We will conduct three simulations to investigate expected gravitational wave (GW) bursts from rotating CCSNe, following \citep{dimmelmeier:2001}, to optimize our current domain for future later time simulations.  These optimizations will provide valuable initial conditions for eventual implementation of adaptive mesh refinement and `M1' neutrino physics \citep{foucart:2015, radice:2022}, which will be implemented concurrently with these numerical experiments.  %\textcolor{red}{With new physics, and an optimized domain, we will run two later time simulations?}
+The second objective of the CCSN program is to explore early time CCSN behavior.  We will conduct three simulations to investigate expected gravitational wave (GW) bursts from rotating CCSNe, following \citep{dimmelmeier:2001}, to optimize our current domain for future later time simulations.  These optimizations will provide valuable initial conditions for eventual implementation of adaptive mesh refinement and `M1' neutrino physics \citep{foucart:2015, radice:2022}, which will be implemented concurrently with these numerical experiments.
 
 \textbf{Supernova estimating computational resources}
 
 As preliminary data, we ran PCS evolution on Frontera, and we estimate that four runs for 20 ms would require 4000 node hours.  For the second CCSN objective, we ran CCSN evolution on Frontera with simplified physics.  We estimate three simulations for 200 ms each would require 27k node hours.  \textbf{In total for the CCSN program we request 31k node hours.}
-
-% \textbf{Drafting ideas}
-
-% \begin{itemize}
-%     \item PCS star cost on frontera (use Isaac's script on frontera) 2-4 simulations 20-25 ms of evolution
-%     \item Supernova bounce sim setup on frontera (Gh+GRMHD) ($\sim 200$ ms) x 20 runs
-%     \item long term simple BH formation, no neutrino physics? (careful b/c no AMR)
-% \end{itemize}
-
-% \begin{itemize}
-%     \item CCSN section
-%     \item science value overlaps to multiple areas of astro, r process, compact object, GWs
-%     \item goals use current capabilities for physics
-%     \item AND set up for later simulations (bounce/verification, tuning domain, concurrent with physics development.)
-%     \item long term goals BH formation?
-% \end{itemize}
-
-% \begin{itemize}
-%     \item Phase transition section
-%     \item phase transition
-%     \item observationally motivated: exotic physics with observable
-%     \item current capabilities of SpECTRE (cite Isaac's paper)
-% \end{itemize}
 
 \renewcommand\bibsection{\section*{References}}
 \setlength{\bibsep}{2pt}
