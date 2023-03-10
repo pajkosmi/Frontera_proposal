@@ -103,48 +103,36 @@
 
 \textbf{Supernova (matter simulations) Introduction: }
 
-Core-collapse supernovae (CCSNe) are the explosive endings of massive stars that set the initial conditions for compact object formation.  Capturing these initial conditions, alongside predicting observables to constrain them, is the primary goal of the CCSN program.  The first objective of the CCSN program is to exercise current code capabilities \citep{legred:2023}, to model newly born neutron stars (PNSs) within CCSNe that accrete matter and collapse to a protocompact star (PCS).  We will go beyond previous works \citep{zha:2020}, by searching for a new, detectable, low frequency `memory' component of the signal from rotating PCSs, using the locally developed Characteristic-Cauchy Extraction (CCE) \citep{moxon:2021}.  This project will involve two PCS collapses at two different resolutions, for a total of four simulations.
+Core-collapse supernovae (CCSNe) are the explosive endings of massive stars that set the initial conditions for compact object formation.  Capturing these initial conditions, alongside predicting observables to constrain them, is the primary goal of the CCSN program.  The first objective of the CCSN program is to exercise current code capabilities \citep{legred:2023} to model newly born neutron stars within CCSNe that accrete matter and collapse to a protocompact star (PCS).  We will go beyond previous work \citep{zha:2020}, by being the first to use Characteristic-Cauchy Extraction (CCE) \citep{moxon:2021} to search for a new, detectable, low frequency `memory' component of the GW signal from rotating PCSs.  This project will involve two PCS collapses at two different resolutions, for a total of four simulations.
 
-The second objective of the CCSN program is to explore early time CCSN behavior.  Armed with a domain that does not suffer from timestep restrictions near the poles of CCSNe, we will conduct 20 simulations to investigate expected gravitational wave (GW) bursts from rotating CCSNe, following \citep{dimmelmeier:2001}, to optimize our current domain for future later time simulations.  These optimizations will provide valuable initial conditions for eventual adaptive mesh refinement implementation and incorporation of so called `M1' neutrino physics \citep{shibata:2011}, which will be implemented concurrently with these numerical experiments.  \textcolor{red}{With new physics, two later time simulations?}
+The second objective of the CCSN program is to explore early time CCSN behavior.  We will conduct three simulations to investigate expected gravitational wave (GW) bursts from rotating CCSNe, following \citep{dimmelmeier:2001}, to optimize our current domain for future later time simulations.  These optimizations will provide valuable initial conditions for eventual implementation of adaptive mesh refinement and `M1' neutrino physics \citep{foucart:2015, radice:2022}, which will be implemented concurrently with these numerical experiments.  %\textcolor{red}{With new physics, and an optimized domain, we will run two later time simulations?}
 
 \textbf{Supernova estimating computational resources}
 
-For the first CCSN objective, after running PCS evolution on Frontera for YYY ms using YYY core hours, we estimate the four runs for 20 ms would require YYY node hours.  For the second CCSN objective, after running CCSN evolution, with simplified physics, for YYY ms, we estimate 20 simulations for 200 ms would require YYY core hours.  \textbf{Thus, in total for CCSNe we request YYY node hours.}
+As preliminary data, we ran PCS evolution on Frontera, and we estimate that four runs for 20 ms would require 4000 node hours.  For the second CCSN objective, we ran CCSN evolution on Frontera with simplified physics.  We estimate three simulations for 200 ms each would require 27k node hours.  \textbf{In total for the CCSN program we request 31k node hours.}
 
-\textbf{Drafting ideas}
+% \textbf{Drafting ideas}
 
-\begin{itemize}
-    \item PCS star cost on frontera (use Isaac's script on frontera) 2-4 simulations 20-25 ms of evolution
-    \item Supernova bounce sim setup on frontera (Gh+GRMHD) ($\sim 200$ ms) x 20 runs
-    \item long term simple BH formation, no neutrino physics? (careful b/c no AMR)
-\end{itemize}
+% \begin{itemize}
+%     \item PCS star cost on frontera (use Isaac's script on frontera) 2-4 simulations 20-25 ms of evolution
+%     \item Supernova bounce sim setup on frontera (Gh+GRMHD) ($\sim 200$ ms) x 20 runs
+%     \item long term simple BH formation, no neutrino physics? (careful b/c no AMR)
+% \end{itemize}
 
-\begin{itemize}
-    \item CCSN section
-    \item science value overlaps to multiple areas of astro, r process, compact object, GWs
-    \item goals use current capabilities for physics
-    \item AND set up for later simulations (bounce/verification, tuning domain, concurrent with physics development.)
-    \item long term goals BH formation?
-\end{itemize}
+% \begin{itemize}
+%     \item CCSN section
+%     \item science value overlaps to multiple areas of astro, r process, compact object, GWs
+%     \item goals use current capabilities for physics
+%     \item AND set up for later simulations (bounce/verification, tuning domain, concurrent with physics development.)
+%     \item long term goals BH formation?
+% \end{itemize}
 
-\begin{itemize}
-    \item Phase transition section
-    \item phase transition
-    \item observationally motivated: exotic physics with observable
-    \item current capabilities of SpECTRE (cite Isaac's paper)
-\end{itemize}
-
-\textbf{Supernova Context:} Over the past decade, CCSN models have elucidated a high fidelity neutrino assisted explosion mechanism \citep{vartanyan:2022}, determined partial contributions to the creation of elements with atomic numbers $A \lesssim 200$ \citep{halevi:2018}, quantified resultant stellar mass black hole (BH) properties \citep{woosley:2020}, and developed methods that use gravitational waves (GWs) to constrain supernova progenitors \citep{pajkos:2021}.  With such a wide range of insight offered by CCSNe, much supporting the \textit{Windows on the Universe: The Era of Multi-Messenger Astrophysics} program, better understanding these explosions is vital. However, leveraging numerical models to accomplish these insights incurs a variety of challenges.
-
-Due to computational expense, one of the most difficult challenges modeling supernovae is properly estimating their compact object remnants.  The inclusion of relativistic effects (GRMHD) to properly capture explosion behavior and remnant properties is paramount \citep{kuroda:2012}.  To mitigate computational expense, many leading supernova models approximate general relativistic effects, limiting BH evolution \citep{sykes:2022} or preventing BH formation altogether \citep{marek:2006}---missing key effects from mass and angular momentum accretion.  This work will go beyond previous studies by verifying existing relativistic codes, describing elemental abundances in extreme scenarios, and tracking CCSN evolution beyond BH formation in 3D simulations, while efficiently utilizing leadership class computing resources, like \textit{Frontera}.
-
-\textbf{Year 1:} Code comparison is an effective tool to verify results of complex supernova systems \citep{oconnor:2018}.  The two codes we will compare are \texttt{FLASH} \citep{fryxell:2000,dubey:2009} and \texttt{SpECTRE} \citep{deppe:2022}.  While both codes have recently been employed to model relativistic problems, \citep{deppe:2022,pajkos:2022}, they employ different numerical methods to evolve similar underlying physics.  We will compare the multidimensional evolution of a magnetized relativistic star (`TOV star' test) to track central density oscillations.  After, we will compare multidimensional models of rotating supernovae to track the GWs and neutrino burst 10s ms after core bounce, key checks on the behavior of \textit{detectable} multimessenger signals.
-
-\textbf{Year 2:} The study of self-consistent, long term supernova evolution beyond BH formation is still emerging \citep{sykes:2022}, and the influence of rotation and magnetic field effects in 3D leave room for exploration.  To begin, we will run 3D simulations, neglecting neutrino physics, using an analytic equation of state to save computational cost \citep{dimmelmeier:2001}.  The goal of this first phase is to isolate 3D effects of the magnetized fluid dynamics on the BH, such as magnetic braking and nonaxisymmetric fluid instabilities \citep{kuroda:2016}.  We will analyze these results to quantify BH mass, spin, CCSN kicks, and GWs from ringdown, potentially detectable by 3rd generation GW observatories \citep{araujo:2002,crocker:2015}.  
-
-\textbf{Year 3: } We will then evolve our numerical models with proper neutrino effects (e.g., the so called M1 scheme \citep{shibata:2011}.  These simulations will provide the first of many estimated BH spins from self-consistently evolved supernova simulations.  This pilot work will not only use CCSN theory to constrain BH spin estimates measured from binary BH GWs, but provide insightful mentored student side-projects such as investigating 3D magnetized jet formation.
-
-\texttt{SpECTRE} can also account for more exotic behavior of dense matter, allowing for `phase transitions'.  Such events can cause a newly born neutron star to further collapse to a `quark star'.  We aim to go beyond previous work \citep{zha:2020} by studying magnetized cases, which may form jets upon the second collapse to a quark star ($B\sim10^{15}$ Gauss) and launch highly neutron rich material \citep{halevi:2018}.  Such simulations will look for observable imprints, based on rapid neutron capture element abundances at atomic numbers $\gtrsim 130$.
+% \begin{itemize}
+%     \item Phase transition section
+%     \item phase transition
+%     \item observationally motivated: exotic physics with observable
+%     \item current capabilities of SpECTRE (cite Isaac's paper)
+% \end{itemize}
 
 \renewcommand\bibsection{\section*{References}}
 \setlength{\bibsep}{2pt}
